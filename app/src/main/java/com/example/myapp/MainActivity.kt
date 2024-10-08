@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     val image= findViewById<ImageView>(R.id.imageView)
         val text= findViewById<TextView>(R.id.textView)
+        text.text="hello kotlin!!"
 
 
 
