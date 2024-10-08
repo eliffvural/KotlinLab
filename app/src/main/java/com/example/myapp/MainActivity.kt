@@ -2,6 +2,7 @@ package com.example.myapp
 
 import android.os.Bundle
 import android.renderscript.ScriptGroup.Binding
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.textView.text="hello kotlin!!!"
+        binding.textView.text="HELLO KOTLIN!!!"
 
        /*
         binding.button.setOnClickListener{
@@ -47,11 +48,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-     fun button(view: TextView){
+     fun button(view: View){
          binding.textView.text="saved"
      }
 
-    fun button2(view: TextView){
+    fun button2(view: View){
         binding.textView.text="not saved"
 
     }
