@@ -28,4 +28,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/istanbul" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
