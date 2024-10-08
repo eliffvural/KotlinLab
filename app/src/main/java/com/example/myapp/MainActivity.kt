@@ -1,6 +1,7 @@
 package com.example.myapp
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        println("hello kotlin!!!")
+    val image= findViewById<ImageView>(R.id.imageView)
+
+
+
     }
 }
