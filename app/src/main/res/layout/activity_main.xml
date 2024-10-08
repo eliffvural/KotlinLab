@@ -12,16 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hello android"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="344dp" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/istanbul"
-        tools:layout_editor_absoluteX="106dp" />
+        app:srcCompat="@drawable/istanbul" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
