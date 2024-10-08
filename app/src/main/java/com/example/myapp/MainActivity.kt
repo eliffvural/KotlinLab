@@ -30,9 +30,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.textView.text="hello kotlin!!!"
+
+       /*
         binding.button.setOnClickListener{
             binding.textView.text="clicked to button"
         }
+        */
 
         /*
     val image= findViewById<ImageView>(R.id.imageView)
@@ -43,4 +46,16 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+     fun button(view: TextView){
+         binding.textView.text="saved"
+     }
+
+    fun button2(view: TextView){
+        binding.textView.text="not saved"
+
+    }
+
+
+
 }
