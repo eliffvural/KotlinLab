@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.textView.text="hello kotlin!!!"
+        binding.button.setOnClickListener{
+            binding.textView.text="clicked to button"
+        }
 
         /*
     val image= findViewById<ImageView>(R.id.imageView)
