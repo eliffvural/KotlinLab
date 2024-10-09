@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.textView.text="HELLO KOTLIN!!!"
+       println("onCreate executed")
 
        /*
         binding.button.setOnClickListener{
@@ -48,14 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-     fun button(view: View){
-         binding.textView.text="saved"
-     }
-
-    fun button2(view: View){
-        binding.textView.text="not saved"
-
-    }
 
 
 
