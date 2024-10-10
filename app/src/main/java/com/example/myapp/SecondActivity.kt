@@ -27,9 +27,10 @@ class SecondActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val maindenGelenIntent = intent
+        val sendingName= intent.getStringExtra("name: ")
+        binding.textView2.text=sendingName
     }
-    fun previousPage(view: View) {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+
     }
-}
