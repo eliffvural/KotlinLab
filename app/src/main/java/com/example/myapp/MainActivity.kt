@@ -50,22 +50,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        println("onStart executed!")
+
     }
 
     override fun onResume() {
         super.onResume()
+        println("onResume executed!")
+
     }
 
     override fun onPause() {
         super.onPause()
+        println("onPause executed!")
+
     }
 
     override fun onStop() {
         super.onStop()
+        println("onStop executed!")
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        println("onDestroy executed!")
+
     }
 
 
