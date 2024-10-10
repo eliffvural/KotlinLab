@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-       println("onCreate executed")
+       println("onCreate executed!")
 
        /*
         binding.button.setOnClickListener{
