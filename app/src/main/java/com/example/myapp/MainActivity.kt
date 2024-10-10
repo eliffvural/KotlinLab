@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.renderscript.ScriptGroup.Binding
 import android.view.View
@@ -82,8 +83,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextPage(view: View){
-        val userLogin= binding.editText.text.toString()
-        binding.textView.text="Name: ${userLogin}"
+
+        val intent=Intent(this, SecondActivity::class.java)
+        //val userLogin= binding.editText.text.toString()
+       // binding.textView.text="Name: ${userLogin}"
     }
 
 
