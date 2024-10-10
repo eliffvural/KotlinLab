@@ -60,6 +60,10 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
 
 
 
