@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
     fun nextPage(view: View){
 
         val intent=Intent(this, SecondActivity::class.java)
+        startActivity(intent)
         //val userLogin= binding.editText.text.toString()
        // binding.textView.text="Name: ${userLogin}"
     }
