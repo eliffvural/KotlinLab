@@ -82,7 +82,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextPage(view: View){
-
+        val userLogin= binding.editText.text.toString()
+        binding.textView.text="Name: ${userLogin}"
     }
 
 
