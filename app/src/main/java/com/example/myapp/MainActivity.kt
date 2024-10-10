@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
     }
 
+    override fun onPause() {
+        super.onPause()
+    }
+
 
 
 
