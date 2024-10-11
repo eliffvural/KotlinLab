@@ -105,34 +105,31 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun save(view: View){
-
+    fun save(view: View) {
+        val username = binding.editText.text.toString()
         val alert = AlertDialog.Builder(this@MainActivity)
         alert.setTitle("Save")
         alert.setMessage("Are you sure to save?")
 
-        alert.setPositiveButton("Yes") {dialog, which ->
-            Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
+        // Positive button (Yes)
+        alert.setPositiveButton("Yes") { dialog, which ->
+            if (username.isEmpty()) {
+                Toast.makeText(this@MainActivity, "Do not leave your name empty!", Toast.LENGTH_LONG).show()
+            } else {
+                sharedPreferences.edit().putString("Name", username).apply()
+                binding.textView.text = "Saved name: $username"
+                Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
+            }
         }
 
-        alert.setNegativeButton("No", object: DialogInterface.OnClickListener{
-            override fun onClick(dialog: DialogInterface?, which: Int) {
-                Toast.makeText(this@MainActivity, "Not saved", Toast.LENGTH_LONG).show()
-            }
-        })
+        // Negative button (No)
+        alert.setNegativeButton("No") { dialog, which ->
+            Toast.makeText(this@MainActivity, "Not saved", Toast.LENGTH_LONG).show()
+        }
+
         alert.show()
-
-        /*
-        val intent=Intent(this, SecondActivity::class.java)
-        val userLogin = binding.editText.text.toString()
-        intent.putExtra("name: ", userLogin)
-        startActivity(intent)
-        //val userLogin= binding.editText.text.toString()
-       // binding.textView.text="Name: ${userLogin}"
-
-
-         */
     }
+
 
 
 
