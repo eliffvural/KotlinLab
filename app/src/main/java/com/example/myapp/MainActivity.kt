@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
 
         alert.setNegativeButton("No", object: DialogInterface.OnClickListener{
             override fun onClick(dialog: DialogInterface?, which: Int) {
-                Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "Not saved", Toast.LENGTH_LONG).show()
             }
         })
         alert.show()
