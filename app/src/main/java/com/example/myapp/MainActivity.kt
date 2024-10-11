@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.renderscript.ScriptGroup.Binding
@@ -50,7 +51,16 @@ class MainActivity : AppCompatActivity() {
         text.text="hello kotlin!!"
         */
 
-        Toast.makeText(this, "welcome!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@MainActivity, "welcome!", Toast.LENGTH_SHORT).show()
+
+        /*
+        binding.button.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                println("Clicked the button")
+            }
+        })
+        */
+
 
 
     }
@@ -87,16 +97,33 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun nextPage(view: View){
+    fun save(view: View){
 
         val alert = AlertDialog.Builder(this@MainActivity)
+        alert.setTitle("Save")
+        alert.setMessage("Are you sure to save?")
 
+        alert.setPositiveButton("Yes") {dialog, which ->
+            Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
+        }
+
+        alert.setNegativeButton("No", object: DialogInterface.OnClickListener{
+            override fun onClick(dialog: DialogInterface?, which: Int) {
+                Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
+            }
+        })
+        alert.show()
+
+        /*
         val intent=Intent(this, SecondActivity::class.java)
         val userLogin = binding.editText.text.toString()
         intent.putExtra("name: ", userLogin)
         startActivity(intent)
         //val userLogin= binding.editText.text.toString()
        // binding.textView.text="Name: ${userLogin}"
+
+
+         */
     }
 
 
