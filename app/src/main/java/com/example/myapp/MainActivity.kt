@@ -1,7 +1,9 @@
 package com.example.myapp
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.renderscript.ScriptGroup.Binding
 import android.view.View
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    lateinit var  sharedPreferences: SharedPreferences
+
 
 
 
@@ -35,6 +39,10 @@ class MainActivity : AppCompatActivity() {
             insets
 
         }
+
+        sharedPreferences=this.getSharedPreferences("com.example.myapp",
+            Context.MODE_PRIVATE
+            )
 
 
 
