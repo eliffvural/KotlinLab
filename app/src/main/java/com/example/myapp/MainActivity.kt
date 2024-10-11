@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
 
         // Negative button (No)
         alert.setNegativeButton("No") { dialog, which ->
-            Toast.makeText(this@MainActivity, "Not saved", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, "Not Saved", Toast.LENGTH_LONG).show()
         }
 
         alert.show()
