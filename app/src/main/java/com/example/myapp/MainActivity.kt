@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -87,6 +88,8 @@ class MainActivity : AppCompatActivity() {
 
 
     fun nextPage(view: View){
+
+        val alert = AlertDialog.Builder(this@MainActivity)
 
         val intent=Intent(this, SecondActivity::class.java)
         val userLogin = binding.editText.text.toString()
