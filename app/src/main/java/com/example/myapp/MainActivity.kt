@@ -142,6 +142,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun delete(view: View){
+        gettingName=sharedPreferences.getString("name", "")
+        if (gettingName !=""){
+            sharedPreferences.edit().remove("name").apply()
+        }
+        binding.textView.text="Saved name: "
+    }
+
 
 
 
