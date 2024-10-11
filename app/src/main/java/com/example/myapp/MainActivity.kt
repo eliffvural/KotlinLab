@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     lateinit var  sharedPreferences: SharedPreferences
+    var gettingName: String? =null
 
 
 
@@ -43,6 +44,14 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences=this.getSharedPreferences("com.example.myapp",
             Context.MODE_PRIVATE
             )
+
+        gettingName=sharedPreferences.getString("Name: ",  "")
+        if (gettingName==""){
+            binding.textView.text="Saved name: "
+        }
+        else{
+            binding.textView.text="Saved name: ${gettingName}"
+        }
 
 
 
@@ -107,28 +116,32 @@ class MainActivity : AppCompatActivity() {
 
     fun save(view: View) {
         val username = binding.editText.text.toString()
-        val alert = AlertDialog.Builder(this@MainActivity)
-        alert.setTitle("Save")
-        alert.setMessage("Are you sure to save?")
 
-        // Positive button (Yes)
-        alert.setPositiveButton("Yes") { dialog, which ->
-            if (username.isEmpty()) {
-                Toast.makeText(this@MainActivity, "Do not leave your name empty!", Toast.LENGTH_LONG).show()
-            } else {
-                sharedPreferences.edit().putString("Name", username).apply()
-                binding.textView.text = "Saved name: $username"
+        if (username == "") {
+            // Kullanıcı isim girmediyse uyarı mesajı göster
+            Toast.makeText(this@MainActivity, "Do not leave your name!", Toast.LENGTH_LONG).show()
+        } else {
+            // Kullanıcı isim girdiyse AlertDialog oluştur
+            val alert = AlertDialog.Builder(this@MainActivity)
+            alert.setTitle("Save")
+            alert.setMessage("Are you sure to save?")
+
+            alert.setPositiveButton("Yes") { dialog, which ->
+                // İsim kaydediliyor
+                sharedPreferences.edit().putString("Name: ", username).apply()
+                binding.textView.text = "Saved name: ${username}"
                 Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_LONG).show()
             }
-        }
 
-        // Negative button (No)
-        alert.setNegativeButton("No") { dialog, which ->
-            Toast.makeText(this@MainActivity, "Not Saved", Toast.LENGTH_LONG).show()
-        }
+            alert.setNegativeButton("No") { dialog, which ->
+                Toast.makeText(this@MainActivity, "Not saved", Toast.LENGTH_LONG).show()
+            }
 
-        alert.show()
+            // Dialog'u göster
+            alert.show()
+        }
     }
+
 
 
 
